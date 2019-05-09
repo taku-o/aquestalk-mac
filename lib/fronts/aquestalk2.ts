@@ -1,64 +1,39 @@
+var _fs: any, fs   = () => { _fs = _fs || require('fs'); return _fs; };
+var _ref: any, ref = () => { _ref = _ref || require('ref'); return _ref; };
 
-//class AquesTalk1 {
-//  isSupported(): boolean;
-//  play(): boolean;
-//  record(): boolean;
-//}
-
+// AquesTalk2
 class AquesTalk2 {
+  private aquesTalk2Lib: AquesTalk2Lib;
   constructor(
     private frameworkPath: string
   ) {
+    this.aquesTalk2Lib = new AquesTalk2Lib(frameworkPath);
   }
 
-  wav(): boolean;
-  play(): boolean;
-  record(): boolean;
-}
+  wave(encoded: string, phontPath: string, speed: number): Promise<Buffer> {
+    return new Promise((resolve, reject) => {
+      if (!encoded) {
+        return reject(new Error('invalid parameter, encoded is empty.'));
+      }
 
-class AquesTalk10 {
-  setDevKey(key: string): void;
-  setUsrKey(key: string): void;
-  play(): boolean;
-  record(): boolean;
-}
+      fs().readFile(phontPath, (err: Error, phontData: Buffer) => {
+        if (err) {
+          return reject(new Error(`failed to read phontPath, ${err.message}`));
+        }
 
-// AqKanji2Koe
-class AqKanji2Koe {
-  private _isDevKeySet: boolean = false;
-  private aqKanji2KoeLib: AqKanji2KoeLib;
-  constructor(
-    private frameworkPath: string,
-    private devKey?: string
-  ) {
-    this.aqKanji2KoeLib = new AqKanji2KoeLib(frameworkPath);
-    if (devKey) {
-      this.setDevKey(devKey);
-    }
+        const allocInt = ref().alloc('int');
+        const r = this.aquesTalk2Lib.synthe(encoded, speed, allocInt, phontData);
+        if (ref().isNull(r)) {
+          const errorCode = allocInt.deref();
+          return reject(new Error(this.aquesTalk2Lib.errorTable(errorCode)));
+        }
+
+        const bufWav = ref().reinterpret(r, allocInt.deref(), 0);
+        const managedBuf = Buffer.from(bufWav); // copy bufWav to managed buffer
+        this.aquesTalk2Lib.freeWave(r);
+        resolve(managedBuf);
+      });
+    });
   }
-
-  isDevKeySet(): boolean {
-    return this._isDevKeySet;
-  }
-  setDevKey(key: string): void {
-    if (this._isDevKeySet) {
-      throw new Error('AqKanji2Koe devKey is already set.');
-    }
-    const r = this.aqKanji2KoeLib.setDevKey(key);
-    if (r != 0) {
-      throw new Error('AqKanji2Koe devKey is invalid key.');
-    }
-    this._isDevKeySet = true;
-  }
-
-  convert(kanji: string): string {
-  }
-}
-
-
-class AqUsrDic {
-  importDic(): number;
-  exportDic(): number;
-  check(surface: string, yomi: string, posCode: number): number;
 }
 
