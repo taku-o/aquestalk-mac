@@ -12,11 +12,20 @@
   },
   "files": [
     "README.md",
-    "bin/wav-parse.js",
+    "aquestalk.js",
     "package-lock.json",
     "package.json",
-    "riff.js",
-    "validator.js"
+    "lib/fronts/aquestalk2.js",
+    "lib/fronts/aqusrdic.js",
+    "lib/fronts/aquestalk10.js",
+    "lib/fronts/aqkanji2koe.js",
+    "lib/models/aquestalk2.js",
+    "lib/models/aqusrdic.js",
+    "lib/models/aquestalk10.js",
+    "lib/natives/aquestalk2.js",
+    "lib/natives/aqusrdic.js",
+    "lib/natives/aquestalk10.js",
+    "lib/natives/aqkanji2koe.js"
   ],
   "repository": {
     "type": "git",
@@ -62,3 +71,5 @@
     "typescript": "^3.4.5"
   }
 }
+
+

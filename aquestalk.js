@@ -1,1 +1,17 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const aquestalk2_1 = require("./lib/fronts/aquestalk2");
+exports.AquesTalk2 = aquestalk2_1.default;
+const aquestalk10_1 = require("./lib/fronts/aquestalk10");
+exports.AquesTalk10 = aquestalk10_1.default;
+const aqkanji2koe_1 = require("./lib/fronts/aqkanji2koe");
+exports.AqKanji2Koe = aqkanji2koe_1.default;
+const aqusrdic_1 = require("./lib/fronts/aqusrdic");
+exports.AqUsrDic = aqusrdic_1.default;
+const aquestalk2_2 = require("./lib/models/aquestalk2");
+exports.aq2VoiceList = aquestalk2_2.default;
+const aquestalk10_2 = require("./lib/models/aquestalk10");
+exports.aq10VoiceList = aquestalk10_2.default;
+const aqusrdic_2 = require("./lib/models/aqusrdic");
+exports.posCodeList = aqusrdic_2.posCodeList;
+exports.posCodeHash = aqusrdic_2.posCodeHash;
