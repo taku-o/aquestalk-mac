@@ -1,8 +1,4 @@
-var _fs: any,
-  fs = () => {
-    _fs = _fs || require('fs');
-    return _fs;
-  };
+var fs = require('fs');
 
 // AqUsrDic
 class AqUsrDic {
@@ -13,9 +9,9 @@ class AqUsrDic {
 
   generateUserDict(inCsvPath: string, outUserDicPath: string): boolean {
     try {
-      fs().chmodSync(outUserDicPath, 0o644); // chmod 644 if exists
+      fs.chmodSync(outUserDicPath, 0o644); // chmod 644 if exists
     } catch (err) {
-      fs().closeSync(fs().openSync(outUserDicPath, 'a+')); // create with 644 permission.
+      fs.closeSync(fs.openSync(outUserDicPath, 'a+')); // create with 644 permission.
     }
     const result = this.aqUsrDicLib.importDic(outUserDicPath, inCsvPath);
     if (result == 0) {

@@ -1,10 +1,6 @@
-var _ffi: any,
-  ffi = () => {
-    _ffi = _ffi || require('ffi');
-    return _ffi;
-  };
+var ffi = require('ffi');
+var ref = require('ref');
 
-// AqKanji2Koe
 class AqKanji2KoeLib {
   // void * AqKanji2Koe_Create (const char *pathDic, int *pErr)
   // void AqKanji2Koe_Release (void * hAqKanji2Koe)
@@ -15,31 +11,31 @@ class AqKanji2KoeLib {
   private fn_AqKanji2Koe_Convert: (hAqKanji2Koe: Buffer, kanji: string, koe: Buffer, nBufKoe: number) => number;
   private fn_AqKanji2Koe_SetDevKey: (key: string) => number;
   constructor(frameworkPath: string) {
-    const ptr_void = ref().refType(ref().types.void);
-    const ptr_int = ref().refType(ref().types.int);
-    const ptr_char = ref().refType(ref().types.char);
+    const ptr_void = ref.refType(ref.types.void);
+    const ptr_int = ref.refType(ref.types.int);
+    const ptr_char = ref.refType(ref.types.char);
 
-    const ptr_AqKanji2Koe_Create = ffi()
+    const ptr_AqKanji2Koe_Create = ffi
       .DynamicLibrary(frameworkPath)
       .get('AqKanji2Koe_Create');
-    const ptr_AqKanji2Koe_Release = ffi()
+    const ptr_AqKanji2Koe_Release = ffi
       .DynamicLibrary(frameworkPath)
       .get('AqKanji2Koe_Release');
-    const ptr_AqKanji2Koe_Convert = ffi()
+    const ptr_AqKanji2Koe_Convert = ffi
       .DynamicLibrary(frameworkPath)
       .get('AqKanji2Koe_Convert');
-    const ptr_AqKanji2Koe_SetDevKey = ffi()
+    const ptr_AqKanji2Koe_SetDevKey = ffi
       .DynamicLibrary(frameworkPath)
       .get('AqKanji2Koe_SetDevKey');
-    this.fn_AqKanji2Koe_Create = ffi().ForeignFunction(ptr_AqKanji2Koe_Create, ptr_void, ['string', ptr_int]);
-    this.fn_AqKanji2Koe_Release = ffi().ForeignFunction(ptr_AqKanji2Koe_Release, 'void', [ptr_void]);
-    this.fn_AqKanji2Koe_Convert = ffi().ForeignFunction(ptr_AqKanji2Koe_Convert, 'int', [
+    this.fn_AqKanji2Koe_Create = ffi.ForeignFunction(ptr_AqKanji2Koe_Create, ptr_void, ['string', ptr_int]);
+    this.fn_AqKanji2Koe_Release = ffi.ForeignFunction(ptr_AqKanji2Koe_Release, 'void', [ptr_void]);
+    this.fn_AqKanji2Koe_Convert = ffi.ForeignFunction(ptr_AqKanji2Koe_Convert, 'int', [
       ptr_void,
       'string',
       ptr_char,
       'int',
     ]);
-    this.fn_AqKanji2Koe_SetDevKey = ffi().ForeignFunction(ptr_AqKanji2Koe_SetDevKey, 'int', ['string']);
+    this.fn_AqKanji2Koe_SetDevKey = ffi.ForeignFunction(ptr_AqKanji2Koe_SetDevKey, 'int', ['string']);
   }
 
   create(pathDic: string, pErr: Buffer): Buffer {

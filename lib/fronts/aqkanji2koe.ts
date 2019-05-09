@@ -1,8 +1,4 @@
-var _ref: any,
-  ref = () => {
-    _ref = _ref || require('ref');
-    return _ref;
-  };
+var ref = require('ref');
 
 // AqKanji2Koe
 class AqKanji2Koe {
@@ -32,9 +28,9 @@ class AqKanji2Koe {
       throw new Error('invalid parameter, no input data.');
     }
 
-    const allocInt = ref().alloc('int');
+    const allocInt = ref.alloc('int');
     const aqKanji2Koe = this.aqKanji2KoeLib.create(this.aqDictPath, allocInt);
-    const errorCode = allocInt.deref();
+    const errorCode = allocInt.deref;
     if (errorCode != 0) {
       throw new Error(this.aqKanji2KoeLib.errorTable(errorCode));
     }
@@ -46,7 +42,7 @@ class AqKanji2Koe {
     if (r != 0) {
       throw new Error(this.aqKanji2KoeLib.errorTable(r));
     }
-    const encoded = ref().readCString(buf, 0);
+    const encoded = ref.readCString(buf, 0);
 
     this.aqKanji2KoeLib.release(aqKanji2Koe);
     return encoded;

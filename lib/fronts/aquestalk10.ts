@@ -1,3 +1,5 @@
+var ref = require('ref');
+
 // AquesTalk10
 class AquesTalk10 {
   private aquesTalk10Lib: AquesTalk10Lib;
@@ -53,14 +55,14 @@ class AquesTalk10 {
       const ptr_aqtkVoiceVal = aqtkVoiceVal.ref();
 
       // create wave buffer
-      const allocInt = ref().alloc('int');
+      const allocInt = ref.alloc('int');
       const r = this.aquesTalk10Lib.synthe(ptr_aqtkVoiceVal, encoded, allocInt);
-      if (ref().isNull(r)) {
+      if (ref.isNull(r)) {
         const errorCode = allocInt.deref();
         return reject(new Error(this.aquesTalk10Lib.errorTable(errorCode)));
       }
 
-      const bufWav = ref().reinterpret(r, allocInt.deref(), 0);
+      const bufWav = ref.reinterpret(r, allocInt.deref(), 0);
       const managedBuf = Buffer.from(bufWav); // copy bufWav to managed buffer
       this.aquesTalk10Lib.freeWave(r);
       resolve(managedBuf);
