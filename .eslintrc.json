@@ -1,0 +1,51 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jasmine": true,
+    "mocha": true
+  },
+  "globals": {
+    "angular": true,
+    "introJs": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "rules": {
+    "array-bracket-spacing": ["error", "never"],
+    "comma-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "indent": 0,
+    "linebreak-style": ["error", "unix"],
+    "no-console": "off",
+    "no-empty": "off",
+    "no-global-assign": "off",
+    "no-unused-vars": ["warn", { "args": "none", "varsIgnorePattern": "^_void" }],
+    "semi": ["error", "always"]
+  },
+  "overrides": {
+    "files": ["*.ts"],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json",
+      "tsconfigRootDir": "./"
+    },
+    "rules": {
+      "comma-dangle": ["error", "always-multiline"],
+      "no-empty": "error",
+      "no-global-assign": "error",
+      "no-undef": "off",
+      "quotes": ["error", "single", { "avoidEscape": true }],
+      "object-curly-spacing": ["error", "never"]
+    }
+  }
+}

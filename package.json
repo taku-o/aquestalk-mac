@@ -1,0 +1,57 @@
+{
+  "name": "aquestalk-mac",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib.js",
+  "types": "types.d.ts",
+  "scripts": {
+    "tsc": "gulp tsc",
+    "lint": "gulp lint",
+    "formt": "gulp format",
+    "test": "gulp test"
+  },
+  "files": [
+    "README.md",
+    "bin/wav-parse.js",
+    "package-lock.json",
+    "package.json",
+    "riff.js",
+    "validator.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/taku-o/aquestalk-mac.git"
+  },
+  "keywords": [
+    "wav",
+    "aquestalk",
+    "audio",
+    "javascript"
+  ],
+  "author": "taku-o <mail@nanasi.jp> (https://nanasi.jp/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taku-o/aquestalk-mac/issues"
+  },
+  "homepage": "https://github.com/taku-o/aquestalk-mac",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^10.14.5",
+    "@typescript-eslint/parser": "^1.7.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.6.1",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^5.0.0",
+    "gulp-mocha": "^6.0.0",
+    "gulp-prettier": "^2.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-typescript": "^5.0.1",
+    "mocha": "^4.1.0",
+    "source-map-support": "^0.5.12",
+    "typescript": "^3.4.5"
+  }
+
+}
