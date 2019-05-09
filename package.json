@@ -1,8 +1,8 @@
 {
   "name": "aquestalk-mac",
   "version": "1.0.0",
-  "description": "",
-  "main": "lib.js",
+  "description": "AquesTalk play and record javascript library for Mac.",
+  "main": "aquestalk.js",
   "types": "types.d.ts",
   "scripts": {
     "tsc": "gulp tsc",
