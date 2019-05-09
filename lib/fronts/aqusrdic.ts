@@ -1,4 +1,5 @@
 var fs = require('fs');
+import AqUsrDicLib from '../natives/aqusrdic';
 
 // AqUsrDic
 class AqUsrDic {
@@ -42,3 +43,5 @@ class AqUsrDic {
     }
   }
 }
+
+export default AqUsrDic;

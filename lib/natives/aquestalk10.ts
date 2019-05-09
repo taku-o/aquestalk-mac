@@ -99,3 +99,5 @@ class AquesTalk10Lib {
     return '';
   }
 }
+
+export default AquesTalk10Lib;

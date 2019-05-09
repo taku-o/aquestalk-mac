@@ -79,3 +79,5 @@ class AqKanji2KoeLib {
     return '';
   }
 }
+
+export default AqKanji2KoeLib;

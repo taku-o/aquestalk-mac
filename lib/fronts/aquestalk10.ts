@@ -1,4 +1,5 @@
 var ref = require('ref');
+import AquesTalk10Lib from '../natives/aquestalk10';
 
 // AquesTalk10
 class AquesTalk10 {
@@ -69,3 +70,5 @@ class AquesTalk10 {
     });
   }
 }
+
+export default AquesTalk10;

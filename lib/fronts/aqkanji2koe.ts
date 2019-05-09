@@ -1,4 +1,5 @@
 var ref = require('ref');
+import AqKanji2KoeLib from '../natives/aqkanji2koe';
 
 // AqKanji2Koe
 class AqKanji2Koe {
@@ -48,3 +49,5 @@ class AqKanji2Koe {
     return encoded;
   }
 }
+
+export default AqKanji2Koe;

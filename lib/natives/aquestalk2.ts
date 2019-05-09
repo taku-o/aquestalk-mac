@@ -95,3 +95,4 @@ class AquesTalk2Lib {
   }
 }
 
+export default AquesTalk2Lib;

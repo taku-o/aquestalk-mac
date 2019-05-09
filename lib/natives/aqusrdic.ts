@@ -42,3 +42,4 @@ class AqUsrDicLib {
   }
 }
 
+export default AqUsrDicLib;

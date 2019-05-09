@@ -1,5 +1,6 @@
 var fs = require('fs');
 var ref = require('ref');
+import AquesTalk2Lib from '../natives/aquestalk2';
 
 // AquesTalk2
 class AquesTalk2 {
@@ -34,3 +35,5 @@ class AquesTalk2 {
     });
   }
 }
+
+export default AquesTalk2;
