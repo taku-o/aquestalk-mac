@@ -1,4 +1,4 @@
-function aquesTalk2VoiceList(): {id: string; name: string; path: string}[] {
+function voiceList(): {id: string; name: string; path: string}[] {
   return [
     {id: 'aq_f1c', name: 'f1c 女声', path: 'aq_f1c.phont'},
     {id: 'aq_f3a', name: 'f3a 女声', path: 'aq_f3a.phont'},
@@ -19,3 +19,5 @@ function aquesTalk2VoiceList(): {id: string; name: string; path: string}[] {
     {id: 'aq_teto1', name: 'aq_teto1', path: 'aq_teto1.phont'},
   ];
 }
+
+export default voiceList;

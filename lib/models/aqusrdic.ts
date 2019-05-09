@@ -63,3 +63,8 @@ function posCodeHash(): {[posCode: number]: string} {
     27: '間投詞',
   };
 }
+
+export {
+  posCodeList,
+  posCodeHash,
+};

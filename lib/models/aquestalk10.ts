@@ -1,4 +1,4 @@
-function aquesTalk10VoiceList(): {
+function voiceList(): {
   id: string;
   name: string;
   bas: number;
@@ -19,3 +19,5 @@ function aquesTalk10VoiceList(): {
     {id: 'aq10_R2', name: 'R2 ロボット2', bas: 1, spd: 70, vol: 100, pit: 50, acc: 50, lmd: 50, fsc: 180},
   ];
 }
+
+export default voiceList;
