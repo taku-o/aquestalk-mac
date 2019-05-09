@@ -3,19 +3,15 @@ var _ref: any, ref = () => { _ref = _ref || require('ref'); return _ref; };
 // AqKanji2Koe
 class AqKanji2Koe {
   private aqKanji2KoeLib: AqKanji2KoeLib;
-  private _isDevKeySet: boolean = false;
 
   constructor(
     frameworkPath: string,
     private aqDictPath: string,
-    devKey?: string
   ) {
     this.aqKanji2KoeLib = new AqKanji2KoeLib(frameworkPath);
-    if (devKey) {
-      this.setDevKey(devKey);
-    }
   }
 
+  private _isDevKeySet: boolean = false;
   isDevKeySet(): boolean {
     return this._isDevKeySet;
   }
