@@ -1,12 +1,18 @@
-var _fs: any, fs   = () => { _fs = _fs || require('fs'); return _fs; };
-var _ref: any, ref = () => { _ref = _ref || require('ref'); return _ref; };
+var _fs: any,
+  fs = () => {
+    _fs = _fs || require('fs');
+    return _fs;
+  };
+var _ref: any,
+  ref = () => {
+    _ref = _ref || require('ref');
+    return _ref;
+  };
 
 // AquesTalk2
 class AquesTalk2 {
   private aquesTalk2Lib: AquesTalk2Lib;
-  constructor(
-    private frameworkPath: string
-  ) {
+  constructor(private frameworkPath: string) {
     this.aquesTalk2Lib = new AquesTalk2Lib(frameworkPath);
   }
 
@@ -36,4 +42,3 @@ class AquesTalk2 {
     });
   }
 }
-

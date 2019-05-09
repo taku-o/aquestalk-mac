@@ -1,13 +1,14 @@
-var _ref: any, ref = () => { _ref = _ref || require('ref'); return _ref; };
+var _ref: any,
+  ref = () => {
+    _ref = _ref || require('ref');
+    return _ref;
+  };
 
 // AqKanji2Koe
 class AqKanji2Koe {
   private aqKanji2KoeLib: AqKanji2KoeLib;
 
-  constructor(
-    frameworkPath: string,
-    private aqDictPath: string,
-  ) {
+  constructor(frameworkPath: string, private aqDictPath: string) {
     this.aqKanji2KoeLib = new AqKanji2KoeLib(frameworkPath);
   }
 
@@ -38,9 +39,9 @@ class AqKanji2Koe {
       throw new Error(this.aqKanji2KoeLib.errorTable(errorCode));
     }
 
-    const sourceLength = (new Blob([kanji], {type: 'text/plain'})).size;
-    const encodedLength = sourceLength >= 512? sourceLength * 4 : 512;
-    const buf = Buffer.alloc(sourceLength >= 512? sourceLength * 4 : 512);
+    const sourceLength = new Blob([kanji], {type: 'text/plain'}).size;
+    const encodedLength = sourceLength >= 512 ? sourceLength * 4 : 512;
+    const buf = Buffer.alloc(sourceLength >= 512 ? sourceLength * 4 : 512);
     const r = this.aqKanji2KoeLib.convert(aqKanji2Koe, kanji, buf, encodedLength);
     if (r != 0) {
       throw new Error(this.aqKanji2KoeLib.errorTable(r));
@@ -51,4 +52,3 @@ class AqKanji2Koe {
     return encoded;
   }
 }
-
