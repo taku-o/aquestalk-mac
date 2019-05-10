@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "AquesTalk javascript library for Mac.",
   "main": "aquestalk.js",
-  "types": "types.d.ts",
   "scripts": {
     "tsc": "gulp tsc",
     "lint": "gulp lint",
