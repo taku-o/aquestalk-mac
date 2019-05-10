@@ -9,33 +9,51 @@ var aqKanji2KoeDictPath = path.join(__dirname, './vendor/aq_dic_large');
 var aqKanji2KoeDevKey = 'xxx-xxx-xxx-xxx';
 
 describe('convert', () => {
-  it('should failed to convert jp kanji, because devKey is not set.', (cb) => {
+  it('should failed to convert jp kanji, because devKey is not set.', () => {
     const frameworkPath = aqKanji2KoeFrameworkPath;
     const aqDictPath = aqKanji2KoeDictPath;
     const aqKanji2Koe = new AqKanji2Koe(frameworkPath, aqDictPath);
     const kanji = 'test';
     try {
-      const encoded = aqKanji2Koe.convert(kanji);
-      cb(new Error('AqKanji2Koe.convert result is wronglly success, without devKey.'));
+      const _void_encoded = aqKanji2Koe.convert(kanji);
+      throw new Error('AqKanji2Koe.convert result is wronglly success, without devKey.');
     } catch (err) {
       assert.ok(true);
-      cb();
     }
+  });
+
+  it('should convert jp kanji', () => {
+    if (aqKanji2KoeDevKey == 'xxx-xxx-xxx-xxx') {
+      return;
+    }
+    const frameworkPath = aqKanji2KoeFrameworkPath;
+    const aqDictPath = aqKanji2KoeDictPath;
+    const aqKanji2Koe = new AqKanji2Koe(frameworkPath, aqDictPath);
+    const devKey = aqKanji2KoeDevKey;
+    aqKanji2Koe.setDevKey(devKey);
+    const kanji = 'test';
+    const encoded = aqKanji2Koe.convert(kanji);
+    assert.equal("テ'_スト", encoded);
   });
 });
 
 describe('devKey', () => {
-  it('should do nothing, at setting devKey', (cb) => {
+  it('should do nothing, at setting devKey', () => {
+    if (aqKanji2KoeDevKey == 'xxx-xxx-xxx-xxx') {
+      return;
+    }
     const frameworkPath = aqKanji2KoeFrameworkPath;
     const aqDictPath = aqKanji2KoeDictPath;
     const aqKanji2Koe = new AqKanji2Koe(frameworkPath, aqDictPath);
     const devKey = aqKanji2KoeDevKey;
     aqKanji2Koe.setDevKey(devKey);
     assert.ok(true);
-    cb();
   });
 
-  it('should throw error, if setDevKey will be called multiple times.', (cb) => {
+  it('should throw error, if setDevKey will be called multiple times.', () => {
+    if (aqKanji2KoeDevKey == 'xxx-xxx-xxx-xxx') {
+      return;
+    }
     const frameworkPath = aqKanji2KoeFrameworkPath;
     const aqDictPath = aqKanji2KoeDictPath;
     const aqKanji2Koe = new AqKanji2Koe(frameworkPath, aqDictPath);
@@ -44,10 +62,9 @@ describe('devKey', () => {
 
     try {
       aqKanji2Koe.setDevKey(devKey);
-      cb(new Error('AqKanji2Koe.setDevKey do not throw Error, devKey is already set.'));
+      throw new Error('AqKanji2Koe.setDevKey do not throw Error, devKey is already set.');
     } catch (err) {
       assert.ok(true);
-      cb();
     }
   });
 });

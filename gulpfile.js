@@ -14,6 +14,9 @@ gulp.on('err', () => {
   process.exit(1);
 });
 
+// all
+gulp.task('all', ['tsc', 'lint', 'format']);
+
 // tsc
 gulp.task('tsc', () => {
   return gulp
