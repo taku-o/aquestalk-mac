@@ -6,7 +6,7 @@ var aqDictPath = path.join(__dirname, '../vendor/aq_dic_large');
 var devKey = 'xxx-xxx-xxx-xxx';
 
 var aqKanji2Koe = new AqKanji2Koe(frameworkPath, aqDictPath);
-aqKanji2Koe.setDevKey(devKey); // required
+//aqKanji2Koe.setDevKey(devKey);
 
 var kanji = 'test';
 var encoded = aqKanji2Koe.convert(kanji);

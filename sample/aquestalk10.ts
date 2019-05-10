@@ -6,8 +6,8 @@ var devKey = 'xxx-xxx-xxx-xxx';
 var usrKey = 'xxx-xxx-xxx-xxx';
 
 var aquesTalk10 = new AquesTalk10(frameworkPath);
-aquesTalk10.setDevKey(devKey); // required
-//aquesTalk10.setUsrKey(usrKey); // optional
+//aquesTalk10.setDevKey(devKey);
+//aquesTalk10.setUsrKey(usrKey);
 
 var encoded = "テ'_スト";
 var options = {bas: 0, spd: 100, vol: 100, pit: 100, acc: 100, lmd: 100, fsc: 100};

@@ -10,7 +10,7 @@ var aquesTalk10DevKey = 'xxx-xxx-xxx-xxx';
 var aquesTalk10UsrKey = 'xxx-xxx-xxx-xxx';
 
 describe('wave', () => {
-  it('should failed to generate wav buffer, because devKey is not set.', (cb) => {
+  it('should generate wav buffer, without devKey', (cb) => {
     const frameworkPath = aquesTalk10FrameworkPath;
     const aquesTalk10 = new AquesTalk10(frameworkPath);
     const encoded = "テ'_スト";
@@ -20,11 +20,10 @@ describe('wave', () => {
       .then((buffer) => {
         assert.ok(buffer);
         assert.ok(wavValidator(buffer));
-        cb(new Error('AquesTalk10.wave result is wronglly successful, without devKey.'));
+        cb();
       })
       .catch((err) => {
-        assert.ok(true);
-        cb();
+        cb(err);
       });
   });
 
