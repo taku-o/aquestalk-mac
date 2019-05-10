@@ -7,7 +7,7 @@ const fs = require("fs");
 const temp = require("temp");
 temp.track();
 require('source-map-support').install();
-var aqUsrDicFrameworkPath = path.join(__dirname, '../vendor/AqUsrDic.framework');
+var aqUsrDicFrameworkPath = path.join(__dirname, '../vendor/AqUsrDic.framework/Versions/A/AqUsrDic');
 var aqUsrDicCsvTemplate = path.join(__dirname, '../vendor/aq_dic_large/aq_user.csv');
 var aqUsrDicUsrDictTemplate = path.join(__dirname, '../vendor/aq_dic_large/aq_user.dic');
 var aqUsrDicUsrBinTemplate = path.join(__dirname, '../vendor/aq_dic_large/aqdic.bin');

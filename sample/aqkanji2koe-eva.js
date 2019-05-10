@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const aquestalk_1 = require("../aquestalk");
 var path = require('path');
-var frameworkPath = path.join(__dirname, '../vendor/AqKanji2Koe.framework/Versions/A/AqKanji2Koe');
-var aqDictPath = path.join(__dirname, '../vendor/aq_dic_large');
+var frameworkPath = path.join(__dirname, '../vendorEva/AqKanji2Koe.framework/Versions/A/AqKanji2Koe');
+var aqDictPath = path.join(__dirname, '../vendorEva/aq_dic_large');
 var devKey = 'xxx-xxx-xxx-xxx';
 var aqKanji2Koe = new aquestalk_1.AqKanji2Koe(frameworkPath, aqDictPath);
 var kanji = 'test';

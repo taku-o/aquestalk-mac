@@ -42,7 +42,7 @@ npm install --save aquestalk-mac
 import {AqKanji2Koe} from 'aquestalk';
 import * as from 'path';
 
-var frameworkPath = path.join(__dirname, '../vendor/AqKanji2Koe.framework');
+var frameworkPath = path.join(__dirname, '../vendor/AqKanji2Koe.framework/Versions/A/AqKanji2Koe');
 var aqDictPath = path.join(__dirname, '../vendor/aq_dic_large');
 var devKey = 'xxx-xxx-xxx-xxx';
 
@@ -61,6 +61,7 @@ AquesTalk2で"音声記号列"を音声データに変換します。
 
 - 開発、および利用には次のものが必要です。
     - AquesTalk2ライブラリ
+    - 音声定義phontファイル (AquesTalk2ライブラリに同梱)
     - AquesTalk2開発ライセンス
     - AquesTalk2使用ライセンス (使用するなら)
 
@@ -68,8 +69,8 @@ AquesTalk2で"音声記号列"を音声データに変換します。
 import {AquesTalk2} from 'aquestalk';
 import * as path from 'path';
 
-var frameworkPath = path.join(__dirname, '../vendor/AquesTalk2.framework');
-var phontPath = path.join(__dirname, '../vendor/phont/aq_defo1.phont');
+var frameworkPath = path.join(__dirname, '../vendor/AquesTalk2.framework/Versions/A/AquesTalk2');
+var phontPath = path.join(__dirname, '../vendor/phont/aq_f1c.phont');
 
 const aquesTalk2 = new AquesTalk2(frameworkPath);
 const encoded = "テ'_スト";
@@ -96,7 +97,7 @@ AquesTalk10で"音声記号列"を音声データに変換します。
 import {AquesTalk10} from 'aquestalk';
 import * as path from 'path';
 
-var frameworkPath = path.join(__dirname, '../vendor/AquesTalk10.framework');
+var frameworkPath = path.join(__dirname, '../vendor/AquesTalk10.framework/Versions/A/AquesTalk');
 var devKey = 'xxx-xxx-xxx-xxx';
 var usrKey = 'xxx-xxx-xxx-xxx';
 
@@ -118,7 +119,7 @@ aquesTalk10.wave(encoded, options).then((buffer) => {
 作成したユーザー辞書はAqKanji2Koeで利用できます。
 
 - 開発、および利用には次のものが必要です。
-    - AqUsrDicライブラリ
+    - AqUsrDicライブラリ (AqKanji2Koeライブラリに同梱)
     - AquesTalkユーザー辞書ファイル (AqKanji2Koeライブラリに同梱)
 
 #### generateUserDict
@@ -128,7 +129,7 @@ CSVファイルからユーザー辞書ファイルを生成します。
 import {AqUsrDic} from 'aquestalk';
 var path = require('path');
 
-var frameworkPath = path.join(__dirname, '../vendor/AqUsrDic.framework');
+var frameworkPath = path.join(__dirname, '../vendor/AqUsrDic.framework/Versions/A/AqUsrDic');
 var csvTemplate = path.join(__dirname, '../vendor/aq_dic_large/aq_user.csv');
 var resultDir = path.join(__dirname, '../vendor/aq_dic_large');
 
@@ -144,7 +145,7 @@ var r = aqUsrDic.generateUserDict(csvTemplate, `${resultDir}/aq_user.dic`);
 import {AqUsrDic} from 'aquestalk';
 var path = require('path');
 
-var frameworkPath = path.join(__dirname, '../vendor/AqUsrDic.framework');
+var frameworkPath = path.join(__dirname, '../vendor/AqUsrDic.framework/Versions/A/AqUsrDic');
 var usrDictTemplate = path.join(__dirname, '../vendor/aq_dic_large/aq_user.dic');
 var resultDir = path.join(__dirname, '../vendor/aq_dic_large');
 
@@ -161,7 +162,7 @@ import {AqUsrDic} from '../aquestalk';
 var path = require('path');
 import * as fs from 'fs';
 
-var frameworkPath = path.join(__dirname, '../vendor/AqUsrDic.framework');
+var frameworkPath = path.join(__dirname, '../vendor/AqUsrDic.framework/Versions/A/AqUsrDic');
 
 // validateInput
 var aqUsrDic = new AqUsrDic(frameworkPath);

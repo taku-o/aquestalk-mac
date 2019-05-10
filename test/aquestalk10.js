@@ -5,7 +5,7 @@ const aquestalk_1 = require("../aquestalk");
 const path = require("path");
 const wav_fmt_validator_1 = require("wav-fmt-validator");
 require('source-map-support').install();
-var aquesTalk10FrameworkPath = path.join(__dirname, '../vendor/AquesTalk10.framework');
+var aquesTalk10FrameworkPath = path.join(__dirname, '../vendor/AquesTalk10.framework/Versions/A/AquesTalk');
 var aquesTalk10DevKey = 'xxx-xxx-xxx-xxx';
 var aquesTalk10UsrKey = 'xxx-xxx-xxx-xxx';
 describe('wave', () => {

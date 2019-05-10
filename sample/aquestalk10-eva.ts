@@ -1,7 +1,7 @@
 import {AquesTalk10} from '../aquestalk';
 import * as path from 'path';
 
-var frameworkPath = path.join(__dirname, '../vendor/AquesTalk10.framework/Versions/A/AquesTalk');
+var frameworkPath = path.join(__dirname, '../vendorEva/AquesTalk.framework/Versions/A/AquesTalk');
 var devKey = 'xxx-xxx-xxx-xxx';
 var usrKey = 'xxx-xxx-xxx-xxx';
 

@@ -2,10 +2,10 @@ import {AqUsrDic} from '../aquestalk';
 var path = require('path');
 import * as fs from 'fs';
 
-var frameworkPath = path.join(__dirname, '../vendor/AqUsrDic.framework/Versions/A/AqUsrDic');
-var csvTemplate = path.join(__dirname, '../vendor/aq_dic_large/aq_user.csv');
-var usrDictTemplate = path.join(__dirname, '../vendor/aq_dic_large/aq_user.dic');
-var usrBinTemplate = path.join(__dirname, '../vendor/aq_dic_large/aqdic.bin');
+var frameworkPath = path.join(__dirname, '../vendorEva/AqUsrDic.framework/Versions/A/AqUsrDic');
+var csvTemplate = path.join(__dirname, '../vendorEva/aq_dic_large/aq_user.csv');
+var usrDictTemplate = path.join(__dirname, '../vendorEva/aq_dic_large/aq_user.dic');
+var usrBinTemplate = path.join(__dirname, '../vendorEva/aq_dic_large/aqdic.bin');
 
 // result dir
 var resultDir = path.join(__dirname, './result');

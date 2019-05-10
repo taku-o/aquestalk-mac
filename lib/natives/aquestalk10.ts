@@ -1,4 +1,3 @@
-var path = require('path');
 var ffi = require('ffi');
 var ref = require('ref');
 var StructType = require('ref-struct');
@@ -28,11 +27,10 @@ class AquesTalk10Lib {
     });
     const ptr_AQTK_VOICE = ref.refType(this.AQTK_VOICE);
 
-    const frameworkExePath = path.join(frameworkPath, 'Versions/A/AquesTalk');
-    const ptr_AquesTalk10_Synthe_Utf8 = ffi.DynamicLibrary(frameworkExePath).get('AquesTalk_Synthe_Utf8');
-    const ptr_AquesTalk10_FreeWave = ffi.DynamicLibrary(frameworkExePath).get('AquesTalk_FreeWave');
-    const ptr_AquesTalk10_SetDevKey = ffi.DynamicLibrary(frameworkExePath).get('AquesTalk_SetDevKey');
-    const ptr_AquesTalk10_SetUsrKey = ffi.DynamicLibrary(frameworkExePath).get('AquesTalk_SetUsrKey');
+    const ptr_AquesTalk10_Synthe_Utf8 = ffi.DynamicLibrary(frameworkPath).get('AquesTalk_Synthe_Utf8');
+    const ptr_AquesTalk10_FreeWave = ffi.DynamicLibrary(frameworkPath).get('AquesTalk_FreeWave');
+    const ptr_AquesTalk10_SetDevKey = ffi.DynamicLibrary(frameworkPath).get('AquesTalk_SetDevKey');
+    const ptr_AquesTalk10_SetUsrKey = ffi.DynamicLibrary(frameworkPath).get('AquesTalk_SetUsrKey');
     this.fn_AquesTalk10_Synthe_Utf8 = ffi.ForeignFunction(ptr_AquesTalk10_Synthe_Utf8, ptr_uchar, [ptr_AQTK_VOICE, 'string', ptr_int]);
     this.fn_AquesTalk10_FreeWave = ffi.ForeignFunction(ptr_AquesTalk10_FreeWave, 'void', [ptr_uchar]);
     this.fn_AquesTalk10_SetDevKey = ffi.ForeignFunction(ptr_AquesTalk10_SetDevKey, 'int', ['string']);

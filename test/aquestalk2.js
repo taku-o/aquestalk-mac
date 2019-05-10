@@ -5,8 +5,8 @@ const aquestalk_1 = require("../aquestalk");
 const path = require("path");
 const wav_fmt_validator_1 = require("wav-fmt-validator");
 require('source-map-support').install();
-var aquesTalk2FrameworkPath = path.join(__dirname, '../vendor/AquesTalk2.framework');
-var aquesTalk2PhontPath = path.join(__dirname, '../vendor/phont/aq_defo1.phont');
+var aquesTalk2FrameworkPath = path.join(__dirname, '../vendor/AquesTalk2.framework/Versions/A/AquesTalk2');
+var aquesTalk2PhontPath = path.join(__dirname, '../vendor/phont/aq_f1c.phont');
 describe('wave', () => {
     it('should failed to convert jp kanji, because devKey is not set.', () => {
         const frameworkPath = aquesTalk2FrameworkPath;

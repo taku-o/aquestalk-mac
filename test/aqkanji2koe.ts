@@ -4,7 +4,7 @@ var path = require('path');
 
 require('source-map-support').install();
 
-var aqKanji2KoeFrameworkPath = path.join(__dirname, '../vendor/AqKanji2Koe.framework');
+var aqKanji2KoeFrameworkPath = path.join(__dirname, '../vendor/AqKanji2Koe.framework/Versions/A/AqKanji2Koe');
 var aqKanji2KoeDictPath = path.join(__dirname, '../vendor/aq_dic_large');
 var aqKanji2KoeDevKey = 'xxx-xxx-xxx-xxx';
 
