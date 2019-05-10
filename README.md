@@ -3,10 +3,10 @@
 ## description
 AquesTalk javascript library for Mac.
 
-株式会社アクエストのAquesTalkライブラリを
+AquesTalkライブラリを
 JavaScriptから実行できるようにするMac環境用のライブラリです。
 実行するにはMac環境用のAquesTalkライブラリと、
-各種ライセンス、および、ライセンスキーが必要となります。
+各種ライセンスが必要となります。
 
 ## install
 
@@ -14,18 +14,44 @@ JavaScriptから実行できるようにするMac環境用のライブラリで�
 npm install --save aquestalk-mac
 ```
 
-### AquesTalk framework
-
-
-## Flow
-
-
 ## Q & A
-- 体験版
-- 完成品
-- AquesTalk1
-- 必要なもの
-- ファイルアクセス
+### Q. npm moduleの他に何が必要か？
+- 必要な機能に対応するAquesTalkのライブラリと、その動作に必要なファイル群が必要。
+- 最小構成として、読み上げアプリを作ると過程した場合、
+    - AqKanji2Koe
+    - AquesTal2、もしくは AquesTalk10 のどちらか
+        - が必要になる。
+
+### Q. AquesTalkライブラリはどこから入手できるか？
+- 株式会社アクエストのサイトからダウンロードするか
+- 株式会社アクエストのオンラインストアでライセンス購入時についてくる
+
+### Q. AquesTalkのライセンスはどこから入手できるか？
+- 株式会社アクエストのオンラインストアで購入する。
+
+### Q. このライブラリは、AquesTalkの評価版でも動作するか？
+- 動作した。
+- アプリを完成させる自信がないなら、評価版で動作確認してからの購入で問題無い。
+
+### Q. このライブラリを使ったアプリはあるか？
+- ない。
+- が、移植元のコードを[MYukkuriVoice](https://taku-o.github.io/myukkurivoice/)で使用している。
+
+### Q. AquesTalk1のライブラリはサポートしていない？
+- まだサポートしていない。
+- しかし、サポートする前に、MacでAquesTalk1が動作しなくなる見込み。
+
+### Q. ファイルアクセスが必要？
+- Q. このライブラリを使用するにはファイルアクセスが必要？
+    - A. 必要
+- Q. つまり、Webブラウザでは動作しない？
+    - A. 基本的には動作しない
+- Q. 音声をJavaScriptで再生するには、Web Audio APIあたりが妥当？
+    - A. 他のプログラムに作成した音声データを渡さないなら妥当
+- Q. Web Audio APIは、Webブラウザで動作しますよね？
+    - A. そうですね
+- Q. このライブラリはどういう場面で使えるの？
+    - A. E、Electronとか･･･
 
 ## Sample Code
 ### AqKanji2Koe
@@ -121,6 +147,8 @@ aquesTalk10.wave(encoded, options).then((buffer) => {
 - 開発、および利用には次のものが必要です。
     - AqUsrDicライブラリ (AqKanji2Koeライブラリに同梱)
     - AquesTalkユーザー辞書ファイル (AqKanji2Koeライブラリに同梱)
+    - AqKanji2Koe開発ライセンス
+    - AqKanji2Koe使用ライセンス (使用するなら)
 
 #### generateUserDict
 CSVファイルからユーザー辞書ファイルを生成します。
