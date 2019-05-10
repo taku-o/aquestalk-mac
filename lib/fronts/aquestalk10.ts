@@ -43,6 +43,9 @@ class AquesTalk10 {
       if (!encoded) {
         return reject(new Error('invalid parameter, encoded is empty.'));
       }
+      if (!this._isDevKeySet) {
+        throw new Error('invalid status, AquesTalk10 devKey is not set.');
+      }
 
       // create struct
       const aqtkVoiceVal = new this.aquesTalk10Lib.AQTK_VOICE();

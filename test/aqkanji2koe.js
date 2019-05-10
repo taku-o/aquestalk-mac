@@ -15,11 +15,11 @@ describe('convert', () => {
         const kanji = 'test';
         try {
             const _void_encoded = aqKanji2Koe.convert(kanji);
-            throw new Error('AqKanji2Koe.convert result is wronglly success, without devKey.');
         }
         catch (err) {
-            chai_1.assert.ok(true);
+            return chai_1.assert.ok(true);
         }
+        throw new Error('AqKanji2Koe.convert result is wronglly success, without devKey.');
     });
     it('should convert jp kanji', () => {
         if (aqKanji2KoeDevKey == 'xxx-xxx-xxx-xxx') {
@@ -58,10 +58,10 @@ describe('devKey', () => {
         aqKanji2Koe.setDevKey(devKey);
         try {
             aqKanji2Koe.setDevKey(devKey);
-            throw new Error('AqKanji2Koe.setDevKey do not throw Error, devKey is already set.');
         }
         catch (err) {
-            chai_1.assert.ok(true);
+            return chai_1.assert.ok(true);
         }
+        throw new Error('AqKanji2Koe.setDevKey do not throw Error, devKey is already set.');
     });
 });

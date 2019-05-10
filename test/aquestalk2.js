@@ -13,8 +13,7 @@ describe('wave', () => {
         const aquesTalk2 = new aquestalk_1.AquesTalk2(frameworkPath);
         const encoded = "テ'_スト";
         const phontPath = aquesTalk2PhontPath;
-        aquesTalk2.wave(encoded, phontPath, 100)
-            .then((buffer) => {
+        aquesTalk2.wave(encoded, phontPath, 100).then((buffer) => {
             chai_1.assert.ok(buffer);
             chai_1.assert.ok(wav_fmt_validator_1.validator(buffer));
         });

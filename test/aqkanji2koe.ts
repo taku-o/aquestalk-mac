@@ -16,10 +16,10 @@ describe('convert', () => {
     const kanji = 'test';
     try {
       const _void_encoded = aqKanji2Koe.convert(kanji);
-      throw new Error('AqKanji2Koe.convert result is wronglly success, without devKey.');
     } catch (err) {
-      assert.ok(true);
+      return assert.ok(true);
     }
+    throw new Error('AqKanji2Koe.convert result is wronglly success, without devKey.');
   });
 
   it('should convert jp kanji', () => {
@@ -62,9 +62,9 @@ describe('devKey', () => {
 
     try {
       aqKanji2Koe.setDevKey(devKey);
-      throw new Error('AqKanji2Koe.setDevKey do not throw Error, devKey is already set.');
     } catch (err) {
-      assert.ok(true);
+      return assert.ok(true);
     }
+    throw new Error('AqKanji2Koe.setDevKey do not throw Error, devKey is already set.');
   });
 });
