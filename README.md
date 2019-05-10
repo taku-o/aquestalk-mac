@@ -62,6 +62,18 @@ npm install --save-dev electron-rebuild
 ./node_modules/.bin/electron-rebuild
 ```
 
+### Q. サンプルコードやテストで参照しているvendorには何が置いてある？
+
+```
+|-- vendor
+    |-- AqKanji2Koe.framework
+    |-- AqUsrDic.framework
+    |-- AquesTalk10.framework
+    |-- AquesTalk2.framework
+    |-- aq_dic_large
+    `-- phont
+```
+
 ## Sample Code
 ### AqKanji2Koe
 "日本語文字列"をAquesTalkで利用可能な"音声記号列"に変換します。
