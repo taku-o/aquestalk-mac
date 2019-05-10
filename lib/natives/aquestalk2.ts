@@ -1,3 +1,4 @@
+var path = require('path');
 var ffi = require('ffi');
 var ref = require('ref');
 
@@ -11,18 +12,10 @@ class AquesTalk2Lib {
     const ptr_int = ref.refType(ref.types.int);
     const ptr_uchar = ref.refType(ref.types.uchar);
 
-    const ptr_AquesTalk2_Synthe_Utf8 = ffi
-      .DynamicLibrary(frameworkPath)
-      .get('AquesTalk2_Synthe_Utf8');
-    const ptr_AquesTalk2_FreeWave = ffi
-      .DynamicLibrary(frameworkPath)
-      .get('AquesTalk2_FreeWave');
-    this.fn_AquesTalk2_Synthe_Utf8 = ffi.ForeignFunction(ptr_AquesTalk2_Synthe_Utf8, ptr_uchar, [
-      'string',
-      'int',
-      ptr_int,
-      ptr_void,
-    ]);
+    const frameworkExePath = path.join(frameworkPath, 'Versions/A/AquesTalk2');
+    const ptr_AquesTalk2_Synthe_Utf8 = ffi.DynamicLibrary(frameworkExePath).get('AquesTalk2_Synthe_Utf8');
+    const ptr_AquesTalk2_FreeWave = ffi.DynamicLibrary(frameworkExePath).get('AquesTalk2_FreeWave');
+    this.fn_AquesTalk2_Synthe_Utf8 = ffi.ForeignFunction(ptr_AquesTalk2_Synthe_Utf8, ptr_uchar, ['string', 'int', ptr_int, ptr_void]);
     this.fn_AquesTalk2_FreeWave = ffi.ForeignFunction(ptr_AquesTalk2_FreeWave, 'void', [ptr_uchar]);
   }
 

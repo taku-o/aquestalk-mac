@@ -1,3 +1,4 @@
+var path = require('path');
 var ffi = require('ffi');
 
 class AqUsrDicLib {
@@ -10,18 +11,11 @@ class AqUsrDicLib {
   private fn_AqUsrDic_Check: (surface: string, yomi: string, posCode: number) => number;
   private fn_AqUsrDic_GetLastError: () => string;
   constructor(frameworkPath: string) {
-    const ptr_AqUsrDic_Import = ffi
-      .DynamicLibrary(frameworkPath)
-      .get('AqUsrDic_Import');
-    const ptr_AqUsrDic_Export = ffi
-      .DynamicLibrary(frameworkPath)
-      .get('AqUsrDic_Export');
-    const ptr_AqUsrDic_Check = ffi
-      .DynamicLibrary(frameworkPath)
-      .get('AqUsrDic_Check');
-    const ptr_AqUsrDic_GetLastError = ffi
-      .DynamicLibrary(frameworkPath)
-      .get('AqUsrDic_GetLastError');
+    const frameworkExePath = path.join(frameworkPath, 'Versions/A/AqUsrDic');
+    const ptr_AqUsrDic_Import = ffi.DynamicLibrary(frameworkExePath).get('AqUsrDic_Import');
+    const ptr_AqUsrDic_Export = ffi.DynamicLibrary(frameworkExePath).get('AqUsrDic_Export');
+    const ptr_AqUsrDic_Check = ffi.DynamicLibrary(frameworkExePath).get('AqUsrDic_Check');
+    const ptr_AqUsrDic_GetLastError = ffi.DynamicLibrary(frameworkExePath).get('AqUsrDic_GetLastError');
     this.fn_AqUsrDic_Import = ffi.ForeignFunction(ptr_AqUsrDic_Import, 'int', ['string', 'string']);
     this.fn_AqUsrDic_Export = ffi.ForeignFunction(ptr_AqUsrDic_Export, 'int', ['string', 'string']);
     this.fn_AqUsrDic_Check = ffi.ForeignFunction(ptr_AqUsrDic_Check, 'int', ['string', 'string', 'int']);

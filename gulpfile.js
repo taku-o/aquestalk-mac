@@ -33,7 +33,7 @@ gulp.task('tsc-test', () => {
 // lint
 gulp.task('lint', () => {
   return gulp
-    .src(['*.ts', 'lib/**/*.ts', 'test/**/*.ts'])
+    .src(['*.ts', 'lib/**/*.ts', 'test/**/*.ts', '!types.d.ts'])
     .pipe(eslint({useEslintrc: true}))
     .pipe(eslint.format());
 });
@@ -48,7 +48,7 @@ gulp.task('format', () => {
         arrowParens: 'always',
         bracketSpacing: false,
         insertPragma: false,
-        printWidth: 120,
+        printWidth: 150,
         proseWrap: 'preserve',
         requirePragma: false,
         semi: true,

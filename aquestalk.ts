@@ -9,13 +9,4 @@ import aq2VoiceList from './lib/models/aquestalk2';
 import aq10VoiceList from './lib/models/aquestalk10';
 import {posCodeList, posCodeHash} from './lib/models/aqusrdic';
 
-export {
-  AquesTalk2,
-  AquesTalk10,
-  AqKanji2Koe,
-  AqUsrDic,
-  aq2VoiceList,
-  aq10VoiceList,
-  posCodeList,
-  posCodeHash,
-};
+export {AquesTalk2, AquesTalk10, AqKanji2Koe, AqUsrDic, aq2VoiceList, aq10VoiceList, posCodeList, posCodeHash};

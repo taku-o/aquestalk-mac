@@ -64,7 +64,4 @@ function posCodeHash(): {[posCode: number]: string} {
   };
 }
 
-export {
-  posCodeList,
-  posCodeHash,
-};
+export {posCodeList, posCodeHash};
