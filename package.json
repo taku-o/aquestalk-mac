@@ -3,13 +3,45 @@
   "version": "0.1.0",
   "description": "AquesTalk javascript library for Mac.",
   "main": "aquestalk.js",
-  "types": "types.d.ts",
   "scripts": {
     "tsc": "gulp tsc",
     "lint": "gulp lint",
     "formt": "gulp format",
     "test": "gulp test"
   },
+  "files": [
+    "test/aquestalk2.js",
+    "test/aqusrdic.js",
+    "test/aquestalk10.js",
+    "test/aqkanji2koe.js",
+    "README.md",
+    "package-lock.json",
+    "package.json",
+    "sample/aquestalk10-eva.js",
+    "sample/aqkanji2koe-eva.js",
+    "sample/result/.gitkeep",
+    "sample/aquestalk2.js",
+    "sample/aq2voicelist.js",
+    "sample/aqusrdic.js",
+    "sample/aqusrdic-eva.js",
+    "sample/aquestalk2-eva.js",
+    "sample/aquestalk10.js",
+    "sample/aq10voicelist.js",
+    "sample/poscodelist.js",
+    "sample/aqkanji2koe.js",
+    "lib/fronts/aquestalk2.js",
+    "lib/fronts/aqusrdic.js",
+    "lib/fronts/aquestalk10.js",
+    "lib/fronts/aqkanji2koe.js",
+    "lib/models/aquestalk2.js",
+    "lib/models/aqusrdic.js",
+    "lib/models/aquestalk10.js",
+    "lib/natives/aquestalk2.js",
+    "lib/natives/aqusrdic.js",
+    "lib/natives/aquestalk10.js",
+    "lib/natives/aqkanji2koe.js",
+    "aquestalk.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/taku-o/aquestalk-mac.git"
@@ -56,3 +88,5 @@
     "wav-fmt-validator": "^0.1.1"
   }
 }
+
+
