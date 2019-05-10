@@ -150,7 +150,7 @@ aquesTalk10.wave(encoded, options).then((buffer) => {
 ```
 
 ##### 音声の定義
-AquesTalk10用の音声定義の基本セットは次の通りです。
+AquesTalk10用の音声定義の基本セットは次の通りです。  
 aq10VoiceList()を呼び出しても取得できます。
 
 ```javascript
@@ -169,7 +169,7 @@ console.log(aq10VoiceList());
 ```
 
 ### AqUsrDic
-ユーザー辞書を操作します。
+ユーザー辞書を操作します。  
 作成したユーザー辞書はAqKanji2Koeで利用できます。
 
 - 開発、および利用には次のものが必要です。
@@ -229,7 +229,7 @@ var r = aqUsrDic.validateInput(surface, yomi, posCode);
 ```
 
 ##### posCode
-AqUsrDicライブラリで使用するposCodeの定義は次の通りです。
+AqUsrDicライブラリで使用するposCodeの定義は次の通りです。  
 posCodeList()を呼び出しても取得できます。
 
 ```javascript
