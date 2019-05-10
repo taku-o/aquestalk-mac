@@ -109,7 +109,8 @@ var phontPath = path.join(__dirname, '../vendor/phont/aq_f1c.phont');
 
 const aquesTalk2 = new AquesTalk2(frameworkPath);
 const encoded = "テ'_スト";
-aquesTalk2.wave(encoded, phontPath, 100).then((buffer) => {
+const speed = 100;
+aquesTalk2.wave(encoded, phontPath, speed).then((buffer) => {
   // TODO
   // use buffer
 });
