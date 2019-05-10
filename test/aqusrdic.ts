@@ -19,7 +19,7 @@ describe('generateUserDict', () => {
     const inCsvPath = aqUsrDicCsvTemplate;
     const fsprefix = `_aquestalk_test${Date.now().toString(36)}`;
     const dirPath = temp.mkdirSync(fsprefix);
-    const outUserDicPath = `${dirPath}/aq_user.dic`
+    const outUserDicPath = `${dirPath}/aq_user.dic`;
     // copy bin
     fs.writeFileSync(`${dirPath}/aqdic.bin`, fs.readFileSync(aqUsrDicUsrBinTemplate));
     const r = aqUsrDic.generateUserDict(inCsvPath, outUserDicPath);
@@ -37,7 +37,7 @@ describe('generateCSV', () => {
     const inUserDicPath = aqUsrDicUsrDictTemplate;
     const fsprefix = `_aquestalk_test${Date.now().toString(36)}`;
     const dirPath = temp.mkdirSync(fsprefix);
-    const outCsvPath = `${dirPath}/aq_user.csv`
+    const outCsvPath = `${dirPath}/aq_user.csv`;
     const r = aqUsrDic.generateCSV(inUserDicPath, outCsvPath);
     assert.ok(r);
     fs.stat(outCsvPath, (err, stats) => {
@@ -71,4 +71,3 @@ describe('validateInput', () => {
     throw new Error('AqUsrDic.validateInput do not throw Error, yomi is wrong input.');
   });
 });
-
