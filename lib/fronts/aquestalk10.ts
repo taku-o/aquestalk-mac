@@ -38,7 +38,7 @@ class AquesTalk10 {
     this._isUsrKeySet = true;
   }
 
-  wave(encoded: string, options: WaveOptions): Promise<Buffer> {
+  wave(encoded: string, options: aquestalk.WaveOptions): Promise<Buffer> {
     return new Promise((resolve, reject) => {
       if (!encoded) {
         return reject(new Error('invalid parameter, encoded is empty.'));
