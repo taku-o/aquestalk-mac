@@ -5,7 +5,7 @@ const aquestalk_1 = require("../aquestalk");
 var path = require('path');
 require('source-map-support').install();
 var aqKanji2KoeFrameworkPath = path.join(__dirname, '../vendor/AqKanji2Koe.framework');
-var aqKanji2KoeDictPath = path.join(__dirname, './vendor/aq_dic_large');
+var aqKanji2KoeDictPath = path.join(__dirname, '../vendor/aq_dic_large');
 var aqKanji2KoeDevKey = 'xxx-xxx-xxx-xxx';
 describe('convert', () => {
     it('should failed to convert jp kanji, because devKey is not set.', () => {
