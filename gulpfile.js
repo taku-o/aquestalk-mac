@@ -20,13 +20,13 @@ gulp.task('all', ['tsc', 'lint', 'format']);
 // tsc
 gulp.task('tsc', () => {
   return gulp
-    .src(['*.ts', 'lib/**/*.ts', 'test/**/*.ts'], {base: '.'})
+    .src(['*.ts', 'lib/**/*.ts', 'test/**/*.ts', 'sample/**/*.ts'], {base: '.'})
     .pipe(tsProject())
     .js.pipe(gulp.dest('.'));
 });
 gulp.task('tsc-test', () => {
   return gulp
-    .src(['*.ts', 'lib/**/*.ts', 'test/**/*.ts'], {base: '.'})
+    .src(['*.ts', 'lib/**/*.ts', 'test/**/*.ts', 'sample/**/*.ts'], {base: '.'})
     .pipe(sourcemaps.init())
     .pipe(tsProject())
     .js.pipe(sourcemaps.write())
@@ -36,7 +36,7 @@ gulp.task('tsc-test', () => {
 // lint
 gulp.task('lint', () => {
   return gulp
-    .src(['*.ts', 'lib/**/*.ts', 'test/**/*.ts', '!types.d.ts'])
+    .src(['*.ts', 'lib/**/*.ts', 'test/**/*.ts', 'sample/**/*.ts', '!types.d.ts'])
     .pipe(eslint({useEslintrc: true}))
     .pipe(eslint.format());
 });
@@ -44,7 +44,7 @@ gulp.task('lint', () => {
 // format
 gulp.task('format', () => {
   return gulp
-    .src(['*.ts', 'lib/**/*.ts', 'test/**/*.ts'], {base: '.'})
+    .src(['*.ts', 'lib/**/*.ts', 'test/**/*.ts', 'sample/**/*.ts'], {base: '.'})
     .pipe(
       prettier({
         parser: 'typescript',

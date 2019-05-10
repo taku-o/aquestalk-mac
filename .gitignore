@@ -4,5 +4,8 @@ Thumbs.db
 tsconfig.tsbuildinfo
 /node_modules/
 /vendor/
+/sample/result/*.bin
+/sample/result/*.dic
+/sample/result/*.csv
 
 

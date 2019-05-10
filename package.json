@@ -1,7 +1,7 @@
 {
   "name": "aquestalk-mac",
   "version": "1.0.0",
-  "description": "AquesTalk play and record javascript library for Mac.",
+  "description": "AquesTalk javascript library for Mac.",
   "main": "aquestalk.js",
   "types": "types.d.ts",
   "scripts": {
@@ -10,23 +10,6 @@
     "formt": "gulp format",
     "test": "gulp test"
   },
-  "files": [
-    "README.md",
-    "aquestalk.js",
-    "package-lock.json",
-    "package.json",
-    "lib/fronts/aquestalk2.js",
-    "lib/fronts/aqusrdic.js",
-    "lib/fronts/aquestalk10.js",
-    "lib/fronts/aqkanji2koe.js",
-    "lib/models/aquestalk2.js",
-    "lib/models/aqusrdic.js",
-    "lib/models/aquestalk10.js",
-    "lib/natives/aquestalk2.js",
-    "lib/natives/aqusrdic.js",
-    "lib/natives/aquestalk10.js",
-    "lib/natives/aqkanji2koe.js"
-  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/taku-o/aquestalk-mac.git"

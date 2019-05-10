@@ -33,7 +33,7 @@
     "semi": ["error", "always"]
   },
   "overrides": {
-    "files": ["*.ts"],
+    "files": ["*.ts", "lib/**/*.ts", "test/**/*.ts", "sample/**/*.ts"],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
       "project": "./tsconfig.json",
