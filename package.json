@@ -1,6 +1,6 @@
 {
   "name": "aquestalk-mac",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "AquesTalk javascript library for Mac.",
   "main": "aquestalk.js",
   "types": "types.d.ts",

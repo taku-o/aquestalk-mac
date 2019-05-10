@@ -3,10 +3,8 @@
 ## description
 AquesTalk javascript library for Mac.
 
-AquesTalkライブラリを
-JavaScriptから実行できるようにするMac環境用のライブラリです。
-実行するにはMac環境用のAquesTalkライブラリと、
-各種ライセンスが必要となります。
+AquesTalkライブラリをJavaScriptから実行できるようにするMac環境用のライブラリです。  
+実行するにはMac環境用のAquesTalkのライブラリが必要となります。
 
 ## install
 
@@ -17,10 +15,10 @@ npm install --save aquestalk-mac
 ## Q & A
 ### Q. npm moduleの他に何が必要か？
 - 必要な機能に対応するAquesTalkのライブラリと、その動作に必要なファイル群が必要。
-- 最小構成として、読み上げアプリを作ると過程した場合、
-    - AqKanji2Koe
-    - AquesTal2、もしくは AquesTalk10 のどちらか
-        - が必要になる。
+- 最小構成として、読み上げアプリを作ると仮定した場合、
+    - AqKanji2Koe で"音声記号列"に変換する
+    - AquesTal2、もしくは AquesTalk10 のどちらかで音声ファイルを作成する
+        - ことになる。
 
 ### Q. AquesTalkライブラリはどこから入手できるか？
 - 株式会社アクエストのサイトからダウンロードするか
@@ -30,12 +28,11 @@ npm install --save aquestalk-mac
 - 株式会社アクエストのオンラインストアで購入する。
 
 ### Q. このライブラリは、AquesTalkの評価版でも動作するか？
-- 動作した。
-- アプリを完成させる自信がないなら、評価版で動作確認してからの購入で問題無い。
+- 動作する。
 
 ### Q. このライブラリを使ったアプリはあるか？
 - ない。
-- が、移植元のコードを[MYukkuriVoice](https://taku-o.github.io/myukkurivoice/)で使用している。
+- が、移植元のコードを [MYukkuriVoice](https://taku-o.github.io/myukkurivoice/) というアプリで使用している。
 
 ### Q. AquesTalk1のライブラリはサポートしていない？
 - まだサポートしていない。
@@ -49,9 +46,21 @@ npm install --save aquestalk-mac
 - Q. 音声をJavaScriptで再生するには、Web Audio APIあたりが妥当？
     - A. 他のプログラムに作成した音声データを渡さないなら妥当
 - Q. Web Audio APIは、Webブラウザで動作しますよね？
-    - A. そうですね
+    - A. ･･･そうですね
 - Q. このライブラリはどういう場面で使えるの？
-    - A. E、Electronとか･･･
+    - A. ･･･え、Electronとか･･･
+
+### Q. npm install時にビルドエラー発生
+- Pythonの環境がおかしいかも？
+
+### Q. Electronに組み込んだら動作しなかった
+- Module version mismatch. Expected 50, got 51.
+    - この種のエラーメッセージが出ているなら、electron-rebuildでビルドし直す。
+
+```
+npm install --save-dev electron-rebuild
+./node_modules/.bin/electron-rebuild
+```
 
 ## Sample Code
 ### AqKanji2Koe
@@ -140,6 +149,25 @@ aquesTalk10.wave(encoded, options).then((buffer) => {
 });
 ```
 
+##### 音声の定義
+AquesTalk10用の音声定義の基本セットは次の通りです。
+aq10VoiceList()を呼び出しても取得できます。
+
+```javascript
+import {aq10VoiceList} from '../aquestalk';
+console.log(aq10VoiceList());
+
+[
+  {id: 'aq10_F1', name: 'F1 女声1(新ゆっくり)', bas: 0, spd: 100, vol: 100, pit: 100, acc: 100, lmd: 100, fsc: 100},
+  {id: 'aq10_F2', name: 'F2 女声2', bas: 1, spd: 100, vol: 100, pit: 77, acc: 150, lmd: 100, fsc: 100},
+  {id: 'aq10_F3', name: 'F3 女声3', bas: 0, spd: 80, vol: 100, pit: 100, acc: 100, lmd: 61, fsc: 148},
+  {id: 'aq10_M1', name: 'M1 男声1', bas: 2, spd: 100, vol: 100, pit: 30, acc: 100, lmd: 100, fsc: 100},
+  {id: 'aq10_M2', name: 'M2 男声2', bas: 2, spd: 105, vol: 100, pit: 45, acc: 130, lmd: 120, fsc: 100},
+  {id: 'aq10_R1', name: 'R1 ロボット1', bas: 2, spd: 100, vol: 100, pit: 30, acc: 20, lmd: 190, fsc: 100},
+  {id: 'aq10_R2', name: 'R2 ロボット2', bas: 1, spd: 70, vol: 100, pit: 50, acc: 50, lmd: 50, fsc: 180},
+]
+```
+
 ### AqUsrDic
 ユーザー辞書を操作します。
 作成したユーザー辞書はAqKanji2Koeで利用できます。
@@ -198,5 +226,43 @@ var surface = '大江戸線';
 var yomi = 'オーエドセン';
 var posCode = 5;
 var r = aqUsrDic.validateInput(surface, yomi, posCode);
+```
+
+##### posCode
+AqUsrDicライブラリで使用するposCodeの定義は次の通りです。
+posCodeList()を呼び出しても取得できます。
+
+```javascript
+import {posCodeList} from '../aquestalk';
+console.log(posCodeList());
+
+[ { posCode: 0, kind: '名詞' },
+  { posCode: 1, kind: '名詞(サ変)' },
+  { posCode: 2, kind: '人名' },
+  { posCode: 3, kind: '人名(姓)' },
+  { posCode: 4, kind: '人名(名)' },
+  { posCode: 5, kind: '固有名詞' },
+  { posCode: 6, kind: '固有名詞(組織)' },
+  { posCode: 7, kind: '固有名詞(地域)' },
+  { posCode: 8, kind: '固有名詞(国)' },
+  { posCode: 9, kind: '代名詞' },
+  { posCode: 10, kind: '代名詞(縮約)' },
+  { posCode: 11, kind: '名詞(副詞可能)' },
+  { posCode: 12, kind: '名詞(接続詞的)' },
+  { posCode: 13, kind: '名詞(形容動詞語幹)' },
+  { posCode: 14, kind: '名詞(ナイ形容詞語幹)' },
+  { posCode: 15, kind: '形容詞' },
+  { posCode: 16, kind: '副詞' },
+  { posCode: 17, kind: '副詞(助詞類接続)' },
+  { posCode: 18, kind: '接頭詞(名詞接続)' },
+  { posCode: 19, kind: '接頭詞(動詞接続)' },
+  { posCode: 20, kind: '接頭詞(数接続)' },
+  { posCode: 21, kind: '接頭詞(形容詞接続)' },
+  { posCode: 22, kind: '接続詞' },
+  { posCode: 23, kind: '連体詞' },
+  { posCode: 24, kind: '記号' },
+  { posCode: 25, kind: '記号(アルファベット)' },
+  { posCode: 26, kind: '感動詞' },
+  { posCode: 27, kind: '間投詞' } ]
 ```
 
