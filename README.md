@@ -31,8 +31,8 @@ npm install --save aquestalk-mac
 - 動作する。
 
 ### Q. このライブラリを使ったアプリはあるか？
-- ない。
-- が、移植元のコードを [MYukkuriVoice](https://taku-o.github.io/myukkurivoice/) というアプリで使用している。
+- サンプルアプリ https://github.com/taku-o/aquestalk-player-mac
+- 移植元のコードを [MYukkuriVoice](https://taku-o.github.io/myukkurivoice/) というアプリで使用している。
 
 ### Q. AquesTalk1のライブラリはサポートしていない？
 - まだサポートしていない。
@@ -58,6 +58,7 @@ npm install --save aquestalk-mac
     - この種のエラーメッセージが出ているなら、electron-rebuildでビルドし直す。
 
 ```
+npm install --save-dev electron
 npm install --save-dev electron-rebuild
 ./node_modules/.bin/electron-rebuild
 ```
