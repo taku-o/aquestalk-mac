@@ -10,6 +10,7 @@
     "test": "gulp test"
   },
   "files": [
+    ".python-version",
     "test/aquestalk2.js",
     "test/aqusrdic.js",
     "test/aquestalk10.js",
