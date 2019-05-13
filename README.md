@@ -52,8 +52,10 @@ npm install --save aquestalk-mac
 
 ### Q. npm install時にビルドエラー発生
 - Pythonの環境がおかしいかも？
+- system組み込みのpythonを指定すれば、たいていビルドは成功する。
 
 ### Q. Electronに組み込んだら動作しなかった
+- was compiled against a different Node.js version using NODE_MODULE_VERSION 64. This version of Node.js requires NODE_MODULE_VERSION 69. Please try re-compiling or re-installing the module
 - Module version mismatch. Expected 50, got 51.
     - この種のエラーメッセージが出ているなら、electron-rebuildでビルドし直す。
 
@@ -107,7 +109,7 @@ console.log(encoded);
 ```
 
 ### AquesTalk2
-AquesTalk2で"音声記号列"を音声データに変換します。
+AquesTalk2で"音声記号列"を音声データに変換します。  
 音声記号列はAqKanji2Koeで作成します。
 
 - 開発、および利用には次のものが必要です。
@@ -133,10 +135,10 @@ aquesTalk2.wave(encoded, phontPath, speed).then((buffer) => {
 ```
 
 ### AquesTalk10
-AquesTalk10で"音声記号列"を音声データに変換します。
+AquesTalk10で"音声記号列"を音声データに変換します。  
 音声記号列はAqKanji2Koeで作成します。
 
-使用ライセンスキー(usrKey)は開発者所有のキーを設定するのではなく、
+使用ライセンスキー(usrKey)は開発者所有のキーを設定するのではなく、  
 アプリの利用者に入力、設定させる項目になります。
 
 - 開発、および利用には次のものが必要です。
