@@ -17,7 +17,7 @@ npm install --save aquestalk-mac
 - 必要な機能に対応するAquesTalkのライブラリと、その動作に必要なファイル群が必要。
 - 最小構成として、読み上げアプリを作ると仮定した場合、
     - AqKanji2Koe で"音声記号列"に変換する
-    - AquesTal2、もしくは AquesTalk10 のどちらかで音声ファイルを作成する
+    - AquesTalk2、もしくは AquesTalk10 のどちらかで音声ファイルを作成する
         - ことになる。
 
 ### Q. AquesTalkライブラリはどこから入手できるか？
@@ -74,6 +74,9 @@ npm install --save-dev electron-rebuild
     |-- aq_dic_large
     `-- phont
 ```
+
+## Sample App
+- サンプルアプリ https://github.com/taku-o/aquestalk-player-mac
 
 ## Sample Code
 ### AqKanji2Koe
