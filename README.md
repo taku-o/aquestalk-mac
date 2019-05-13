@@ -43,7 +43,7 @@ npm install --save aquestalk-mac
     - A. 必要
 - Q. つまり、Webブラウザでは動作しない？
     - A. 基本的には動作しない
-- Q. 音声をJavaScriptで再生するには、Web Audio APIあたりが妥当？
+- Q. 音声をJavaScriptで再生するには、Web Audio APIか、HTML5 Audioクラスあたりが妥当？
     - A. 他のプログラムに作成した音声データを渡さないなら妥当
 - Q. Web Audio APIは、Webブラウザで動作しますよね？
     - A. ･･･そうですね
